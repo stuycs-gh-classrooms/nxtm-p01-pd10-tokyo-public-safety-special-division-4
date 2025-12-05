@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Mfyqb_T6)
 # NeXtCS Project 01
-### thinker0: FRIST LSAT
-### thinker1: FRIST LSAT
+### thinker0: Zachariah Fan
+### thinker1: Raymond Zheng
 ---
 
 ### Overview
@@ -22,50 +22,60 @@ The first phase will be to work on this document.
 
 ## Phase 0: Selection, Analysis & Plan
 
-#### Selected Project: CHOOSE WISELY
+#### Selected Project: BREAKOUT!!!
 
 ### Necessary Features
 What are the core features that your program should have? These should be things that __must__ be implemented in order to make the program useable/playable, not extra features that could be added to make the program more interesting/fun.
 
-YOUR ANSWERS HERE
+- Method of movement
+- Blocks must be destroyable
+- Ball must move, destroy blocks, bounce
 
 ### Extra Features
 What are some features that are not essential to the program, but you would like to see (provided you have time after completing the necessary features. Theses can be customizations that are not part of the core requirements.
 
-YOUR ANSWERS HERE
+- Blocks that can do stuff (powerups?)
 
 ### Array Usage
 How will you be using arrays in this project?
 
 1D Array:
-- YOUR ANSER HERE
+- Contain the block class/block grid.
 
 2D Array:
-- YOUR ANSWER HERE
+- Contain the block class/block grid.
 
 
 ### Controls
 How will your program be controlled? List all keyboard commands and mouse interactions.
 
 Keyboard Commands:
-- LIST OF COMMANDS HERE
+- Left Arrow > move paddle left
+- Right Arrow > move paddle right
+- Space > launch projectile
 
 Mouse Control:
-- Mouse movement:
-- Mouse pressed:
+- Mouse movement: (?)
+- Mouse pressed: launch projectile
 
 
 ### Classes
 What classes will you be creating for this project? Include the instance variables and methods that you believe you will need. You will be required to create at least 2 different classes. If you are going to use classes similar to those we've made for previous assignments, you will have to add new features to them.
 
-CLASS NAME0
+BLOCK
 - Instance variables:
   - LIST INSTANCE VARS HERE
 - METHODS
   - LIST METHODS HERE
 
-CLASS NAME1
+PROJECTILE
 - Instance variables:
   - LIST INSTANCE VARS HERE
+- METHODS
+  - LIST METHODS HERE
+
+PADDLE
+- Instance variables:
+  - LIST INSTANCES VARS HERE
 - METHODS
   - LIST METHODS HERE
