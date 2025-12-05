@@ -22,7 +22,7 @@ The first phase will be to work on this document.
 
 ## Phase 0: Selection, Analysis & Plan
 
-#### Selected Project: CHOOSE WISELY
+#### Selected Project: BREAKOUT!!!
 
 ### Necessary Features
 What are the core features that your program should have? These should be things that __must__ be implemented in order to make the program useable/playable, not extra features that could be added to make the program more interesting/fun.
@@ -38,34 +38,42 @@ YOUR ANSWERS HERE
 How will you be using arrays in this project?
 
 1D Array:
-- YOUR ANSER HERE
+- Contain the block class/block grid.
 
 2D Array:
-- YOUR ANSWER HERE
+- Contain the block class/block grid.
 
 
 ### Controls
 How will your program be controlled? List all keyboard commands and mouse interactions.
 
 Keyboard Commands:
-- LIST OF COMMANDS HERE
+- Left Arrow > move paddle left
+- Right Arrow > move paddle right
+- Space > launch projectile
 
 Mouse Control:
-- Mouse movement:
-- Mouse pressed:
+- Mouse movement: (?)
+- Mouse pressed: launch projectile
 
 
 ### Classes
 What classes will you be creating for this project? Include the instance variables and methods that you believe you will need. You will be required to create at least 2 different classes. If you are going to use classes similar to those we've made for previous assignments, you will have to add new features to them.
 
-CLASS NAME0
+BLOCK
 - Instance variables:
   - LIST INSTANCE VARS HERE
 - METHODS
   - LIST METHODS HERE
 
-CLASS NAME1
+PROJECTILE
 - Instance variables:
   - LIST INSTANCE VARS HERE
+- METHODS
+  - LIST METHODS HERE
+
+PADDLE
+- Instance variables:
+  - LIST INSTANCES VARS HERE
 - METHODS
   - LIST METHODS HERE
