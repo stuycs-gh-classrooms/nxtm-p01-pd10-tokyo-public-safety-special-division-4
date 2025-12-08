@@ -12,5 +12,5 @@
 ## Valid criticism:
 
 
-## Stuff I will ignore
+## Stuff I will ignore:
 
