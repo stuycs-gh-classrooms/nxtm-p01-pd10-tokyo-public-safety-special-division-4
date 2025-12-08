@@ -64,18 +64,21 @@ What classes will you be creating for this project? Include the instance variabl
 
 BLOCK
 - Instance variables:
-  - LIST INSTANCE VARS HERE
+  - int Size
+  - PVector() loc
 - METHODS
   - LIST METHODS HERE
 
 PROJECTILE
 - Instance variables:
-  - LIST INSTANCE VARS HERE
+  - int Size
+  - PVector direction
+  - int speed
 - METHODS
   - LIST METHODS HERE
 
 PADDLE
 - Instance variables:
-  - LIST INSTANCES VARS HERE
+  - int Size
 - METHODS
   - LIST METHODS HERE
