@@ -7,7 +7,7 @@
 
 
 ## Added this in:
-
+- added methods (now in README.md)
 
 ## Valid criticism:
 - add methods
