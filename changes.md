@@ -10,7 +10,8 @@
 
 
 ## Valid criticism:
-
+- add methods
+- add int for making blocks appear/disappear or method
 
 ## Stuff I will ignore:
 
