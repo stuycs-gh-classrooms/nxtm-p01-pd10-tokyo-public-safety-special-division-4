@@ -43,7 +43,7 @@ How will you be using arrays in this project?
 - Contain the block class/block grid.
 
 2D Array:
-- Contain the block class/block grid.
+- Contain the block class/block grid. It should outline rows & columns of blocks for the grid.
 
 
 ### Controls
