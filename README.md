@@ -67,7 +67,7 @@ BLOCK
   - int Size
   - PVector() loc
 - METHODS
-  - LIST METHODS HERE
+  - Block() //constructor
 
 PROJECTILE
 - Instance variables:
@@ -75,10 +75,14 @@ PROJECTILE
   - PVector direction
   - int speed
 - METHODS
-  - LIST METHODS HERE
+  - projectile()
+  - void bounce()
+  - void move()
+  - void position() // not sure, maybe use to check when ball hits something, goes off screen?
 
 PADDLE
 - Instance variables:
   - int Size
 - METHODS
-  - LIST METHODS HERE
+  - paddle()
+  - void move()
