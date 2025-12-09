@@ -17,4 +17,7 @@
 ## Stuff I will ignore:
 - the paddle thing (temporarily, its just a little much to consider)
 
-## Stuff I need to consider:
+## Features I could consider:
+- everything should reset on reset (paddle to middle, ball to paddle, blocks come back)
+- randomized block widths (still need to fit in screen)
+- managing health system? (probably can be in the driver)
