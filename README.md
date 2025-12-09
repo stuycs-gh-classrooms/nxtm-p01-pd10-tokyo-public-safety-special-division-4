@@ -68,6 +68,7 @@ BLOCK
   - PVector() loc
 - METHODS
   - Block() //constructor
+  - reset()
 
 PROJECTILE
 - Instance variables:
