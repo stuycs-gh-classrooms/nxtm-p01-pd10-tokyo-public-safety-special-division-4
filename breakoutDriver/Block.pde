@@ -11,4 +11,7 @@ class Block{
     
   }
   
+  void display(){
+    
+  }
 }

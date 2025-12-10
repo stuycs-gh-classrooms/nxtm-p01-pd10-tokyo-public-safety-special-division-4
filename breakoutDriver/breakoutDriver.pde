@@ -1,9 +1,9 @@
-//*
+/*
 
-*//
+*/
 
-Paddle() pddl;
-Projectile() proj;
+Paddle pddl;
+Projectile proj;
 Block[][] grid;
 int rows = 16;
 int cols = 4;
@@ -18,21 +18,22 @@ void setup(){
 }
 
 void draw(){
+  background(0);
   proj.move(); // move projectile
-  paddle.display();
+  pddl.display();
   for(int i=0; i<grid.length; i++){
     for(int j=0; j<grid[i].length; j++){
-      grid[i][j].display();
+      // grid[i][j].display();
     }
   }
   proj.display(); // display everything
 }
 
 void keyPressed(){
- if(key == q){
-   playing != playing;
+ if(key == 'q'){
+   playing = !playing;
  }
- if(key == r){
+ if(key == 'r'){
    playing = false; // pauses
    pddl = new Paddle();
    proj = new Projectile();
