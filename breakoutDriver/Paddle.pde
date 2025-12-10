@@ -8,10 +8,10 @@ class Paddle{
     size = sz;
     x = width / 2;
     y = height - 50;
-  }
+  } // default
   Paddle(){
     this(80);
-  }
+  } // no args
   
   void move(int kpress){
     if(kpress == LEFT){

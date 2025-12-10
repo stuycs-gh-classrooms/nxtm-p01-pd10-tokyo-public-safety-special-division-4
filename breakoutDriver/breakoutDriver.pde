@@ -11,7 +11,7 @@ boolean playing = false;
 
 void setup(){
   size(800,400);
-  background(0);
+  background(180);
   frameRate(60);
   pddl = new Paddle();
   proj = new Projectile();
@@ -23,11 +23,14 @@ void setup(){
         // grid[i][j].display();
       }
   }
+  textAlign(LEFT);
+  textSize(20);
+  text("q to play/pause, space to launch projectile, arrow keys move paddle", 0, 30);
 }
 
 void draw(){
   if(playing){
-    background(0);
+    background(180);
     proj.move(); // move projectile
     pddl.display();
     for(int i=0; i<grid.length; i++){
@@ -49,12 +52,12 @@ void keyPressed(){
    proj = new Projectile();
    grid = new Block[rows][cols];
  }
- if(keyCode == LEFT || keyCode == RIGHT){
-   pddl.move(keyCode);
+ if(playing){
+   if(keyCode == LEFT || keyCode == RIGHT){
+     pddl.move(keyCode);
+   }
+   if(key == ' '){
+     proj.launch = true;
+   }
  }
- /* i'd like to create a "launch" function at some point
- if(key == ' '){
-   
- }
- */
 }

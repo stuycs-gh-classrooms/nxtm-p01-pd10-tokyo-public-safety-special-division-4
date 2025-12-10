@@ -4,12 +4,14 @@ class Projectile{
   PVector direction; // has to contain horizontal & vertical direction
   PVector position;
   int speed;
+  boolean launch;
   
   Projectile(int sz, int spd){
     size = sz;
     speed = spd;
+    launch = false;
     direction = new PVector(1, -1);
-    position = new PVector(width / 2, (pddl.y - 20) + size); // height value should be height of the paddle
+    position = new PVector(pddl.x, (pddl.y - 20) + size); // height value should be height of the paddle
   } // default
   Projectile(int size){
     this(size, 1);
@@ -18,7 +20,7 @@ class Projectile{
     this(10,1);
   } // no args
   
-  void bounce(){
+  void bounceWalls(){
     if(position.x >= width - size/2){
       direction.x = -1;
     }
@@ -32,9 +34,11 @@ class Projectile{
   }
   
   void move(){
-    bounce();
-    position.x += direction.x * speed;
-    position.y += direction.y * speed;
+    if(launch){
+      bounceWalls();
+      position.x += direction.x * speed;
+      position.y += direction.y * speed;
+    }
   }
   
   void display(){
