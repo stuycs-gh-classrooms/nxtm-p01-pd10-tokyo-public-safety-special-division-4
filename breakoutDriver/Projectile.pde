@@ -19,10 +19,20 @@ class Projectile{
   } // no args
   
   void bounce(){
-    // empty 4 now
+    if(position.x >= width - size/2){
+      direction.x = -1;
+    }
+    if(position.x <= size/2){
+      direction.x = 1;
+    }
+    if(position.y <= size/2){
+      direction.y = 1;
+      println(str(direction.y) + "hit top");
+    }
   }
   
   void move(){
+    bounce();
     position.x += direction.x * speed;
     position.y += direction.y * speed;
   }

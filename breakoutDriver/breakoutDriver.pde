@@ -11,22 +11,32 @@ boolean playing = false;
 
 void setup(){
   size(800,400);
+  background(0);
   frameRate(60);
   pddl = new Paddle();
   proj = new Projectile();
   grid = new Block[rows][cols];
+  proj.display();
+  pddl.display();
+  for(int i=0; i<grid.length; i++){
+      for(int j=0; j<grid[i].length; j++){
+        // grid[i][j].display();
+      }
+  }
 }
 
 void draw(){
-  background(0);
-  proj.move(); // move projectile
-  pddl.display();
-  for(int i=0; i<grid.length; i++){
-    for(int j=0; j<grid[i].length; j++){
-      // grid[i][j].display();
+  if(playing){
+    background(0);
+    proj.move(); // move projectile
+    pddl.display();
+    for(int i=0; i<grid.length; i++){
+      for(int j=0; j<grid[i].length; j++){
+        // grid[i][j].display();
+      }
     }
+    proj.display(); // display everything
   }
-  proj.display(); // display everything
 }
 
 void keyPressed(){
