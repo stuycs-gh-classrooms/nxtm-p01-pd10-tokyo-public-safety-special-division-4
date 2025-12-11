@@ -1,6 +1,6 @@
 class Block{
   
-  int size;
+  PVector size;
   PVector loc; // stands for "location"
   boolean destroyed;
   
@@ -8,7 +8,7 @@ class Block{
     
   }
   
-  Block(int x, int y, int sz){
+  Block(int x, int y, PVector sz){
     loc = new PVector(x, y);
     size = sz;
     destroyed = false;
@@ -20,9 +20,9 @@ class Block{
   
   void display(){
     if(!destroyed){
-      rectMode(CENTER);
+      rectMode(CORNER);
       fill(255, 100, 100);
-      rect(loc.x, loc.y, size, 20);
+      rect(loc.x, loc.y, size.x, size.y);
     }
   }
   
@@ -31,10 +31,10 @@ class Block{
     if(destroyed) return false;
     
     // check if projectile is within block boundaries
-    if(p.position.x + p.size/2 > loc.x - size/2 && 
-       p.position.x - p.size/2 < loc.x + size/2 &&
-       p.position.y + p.size/2 > loc.y - 10 &&
-       p.position.y - p.size/2 < loc.y + 10){
+    if(p.position.x + p.size/2 > loc.x && 
+       p.position.x - p.size/2 < loc.x + size.x &&
+       p.position.y + p.size/2 > loc.y &&
+       p.position.y - p.size/2 < loc.y + size.y){
       destroyed = true;
       return true;
     }

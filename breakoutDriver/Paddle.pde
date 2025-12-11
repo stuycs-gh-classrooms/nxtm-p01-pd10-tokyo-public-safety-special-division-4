@@ -24,6 +24,7 @@ class Paddle{
   
   void display(){
     rectMode(CENTER);
+    fill(255);
     rect(x, (y), size, 10);
   }
 }

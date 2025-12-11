@@ -5,9 +5,11 @@
 Paddle pddl;
 Projectile proj;
 Block[][] grid;
-int rows = 16;
-int cols = 4;
+int cols = 16;
+int rows = 4;
 boolean playing = false;
+PVector blockSize;
+int gridHeight = 40; // how far from top of screen grid appears
 
 void setup(){
   size(800,400);
@@ -15,15 +17,13 @@ void setup(){
   frameRate(60);
   pddl = new Paddle();
   proj = new Projectile();
-  grid = new Block[rows][cols];
+  grid = new Block[cols][rows];
   
   // create the block grid
-  int blockSize = 45;
-  int startX = 25;
-  int startY = 60;
+  blockSize = new PVector(width/cols, 40);
   for(int i=0; i<grid.length; i++){
     for(int j=0; j<grid[i].length; j++){
-      grid[i][j] = new Block(startX + i*blockSize, startY + j*30, blockSize);
+      grid[i][j] = new Block(i * int(blockSize.x), gridHeight + j * int(blockSize.y), blockSize);
     }
   }
   
@@ -81,12 +81,9 @@ void keyPressed(){
    proj = new Projectile();
    grid = new Block[rows][cols];
    // recreate the block grid
-   int blockSize = 45;
-   int startX = 25;
-   int startY = 60;
    for(int i=0; i<grid.length; i++){
      for(int j=0; j<grid[i].length; j++){
-       grid[i][j] = new Block(startX + i*blockSize, startY + j*30, blockSize);
+       grid[i][j] = new Block(i * int(blockSize.x), gridHeight + j * int(blockSize.y), blockSize);
      }
    }
  }

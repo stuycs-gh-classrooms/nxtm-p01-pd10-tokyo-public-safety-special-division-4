@@ -23,13 +23,16 @@ class Projectile{
   void bounceWalls(){
     if(position.x >= width - size/2){
       direction.x = -1;
+      speed = int(random(1,3));
     }
     if(position.x <= size/2){
       direction.x = 1;
+      speed = int(random(1,3));
     }
     if(position.y <= size/2){
       direction.y = 1;
-      println(str(direction.y) + "hit top");
+      speed = int(random(1,3));
+      // println(str(direction.y) + "hit top");
     }
   }
   
@@ -42,6 +45,7 @@ class Projectile{
   }
   
   void display(){
+    fill(255);
     circle(position.x, position.y, size);
   }
   
