@@ -4,10 +4,6 @@ class Block{
   PVector loc; // stands for "location"
   boolean destroyed;
   
-  Block(){
-    
-  }
-  
   Block(int x, int y, PVector sz){
     loc = new PVector(x, y);
     size = sz;
@@ -18,12 +14,15 @@ class Block{
     destroyed = false;
   }
   
-  void display(){
+  void display(int c){
     if(!destroyed){
       rectMode(CORNER);
-      fill(255, 100, 100);
+      fill(c, 100, 100);
       rect(loc.x, loc.y, size.x, size.y);
     }
+  }
+  void display(){
+    this.display(255);
   }
   
   // check if projectile hits this block

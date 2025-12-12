@@ -29,6 +29,10 @@ class Projectile{
       direction.x = 1;
       speed = int(random(1,3));
     }
+    if(position.y >= height - size/2){
+      lives -= 1;
+      reset(true);
+    }
     if(position.y <= size/2){
       direction.y = 1;
       speed = int(random(1,3));

@@ -5,7 +5,8 @@
 Paddle pddl;
 Projectile proj;
 Block[][] grid;
-int cols = 16;
+int lives;
+int cols = 10;
 int rows = 4;
 boolean playing = false;
 PVector blockSize;
@@ -15,6 +16,7 @@ void setup(){
   size(800,400);
   background(180);
   frameRate(60);
+  lives = 3;
   pddl = new Paddle();
   proj = new Projectile();
   grid = new Block[cols][rows];
@@ -40,8 +42,20 @@ void setup(){
 }
 
 void draw(){
+  if(lives == 0){
+      background(180);
+      playing = false;
+      textAlign(CENTER);
+      text("GAME OVER", width/2, height/2);
+      text("r to restart", width/2, height/2 + 50);
+  }
+  
   if(playing){
     background(180);
+    
+    textAlign(LEFT); // display lives + game overs
+    text("LIVES: " + str(lives), 0, 20); // shows lives
+    
     proj.move(); // move projectile
     
     // check collision with all blocks
@@ -60,14 +74,15 @@ void draw(){
        proj.position.y - proj.size/2 < pddl.y + 5){
       proj.direction.y = -1; // bounce up
     }
+    pddl.display(); // paddle display
     
-    pddl.display();
+    // displays grid
     for(int i=0; i<grid.length; i++){
       for(int j=0; j<grid[i].length; j++){
         grid[i][j].display();
       }
     }
-    proj.display(); // display everything
+    proj.display();
   }
 }
 
@@ -76,23 +91,34 @@ void keyPressed(){
    playing = !playing;
  }
  if(key == 'r'){
-   playing = false; // pauses
-   pddl = new Paddle();
-   proj = new Projectile();
-   grid = new Block[rows][cols];
-   // recreate the block grid
-   for(int i=0; i<grid.length; i++){
-     for(int j=0; j<grid[i].length; j++){
-       grid[i][j] = new Block(i * int(blockSize.x), gridHeight + j * int(blockSize.y), blockSize);
-     }
-   }
+   reset();
  }
  if(playing){
    if(keyCode == LEFT || keyCode == RIGHT){
-     pddl.move(keyCode);
+      pddl.move(keyCode);
    }
    if(key == ' '){
-     proj.launch = true;
-   }
- }
+      proj.launch = true;
+    }
+  }
 }
+
+void reset(boolean alive){
+  pddl = new Paddle();
+  proj = new Projectile();
+  if(!alive){
+    lives = 3; // set lives to 3
+    grid = new Block[cols][rows];
+    // recreate the block grid
+    for(int i=0; i<grid.length; i++){
+      for(int j=0; j<grid[i].length; j++){
+        grid[i][j] = new Block(i * int(blockSize.x), gridHeight + j * int(blockSize.y), blockSize);
+      }
+    }
+    playing = false; // pauses
+  }
+}
+void reset(){
+  reset(false);
+}
+  
