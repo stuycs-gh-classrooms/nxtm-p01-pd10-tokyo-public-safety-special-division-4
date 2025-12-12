@@ -1,0 +1,56 @@
+class Projectile{
+  
+  int size;
+  PVector direction; // has to contain horizontal & vertical direction
+  PVector position;
+  int speed;
+  boolean launch;
+  
+  Projectile(int sz, int spd){
+    size = sz;
+    speed = spd;
+    launch = false;
+    direction = new PVector(1, -1);
+    position = new PVector(pddl.x, (pddl.y - 20) + size); // height value should be height of the paddle
+  } // default
+  Projectile(int size){
+    this(size, 1);
+  } // size args
+  Projectile(){
+    this(10,1);
+  } // no args
+  
+  void bounceWalls(){
+    if(position.x >= width - size/2){
+      direction.x = -1;
+      speed = int(random(1,3));
+    }
+    if(position.x <= size/2){
+      direction.x = 1;
+      speed = int(random(1,3));
+    }
+    if(position.y >= height - size/2){
+      lives -= 1;
+      reset(true);
+    }
+    if(position.y <= size/2){
+      direction.y = 1;
+      speed = int(random(1,3));
+      // println(str(direction.y) + "hit top");
+    }
+  }
+  
+  void move(){
+    if(launch){
+      bounceWalls();
+      position.x += direction.x * speed;
+      position.y += direction.y * speed;
+    }
+  }
+  
+  void display(){
+    fill(255);
+    circle(position.x, position.y, size);
+  }
+  
+}
