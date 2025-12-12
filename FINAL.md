@@ -6,11 +6,11 @@
 ---
 
 ### How To Play
-## Move Left - Left Arrow 
-## Move Right -  Right Arrow
-## Q - Start/Pause Game
-## R - Restart Gme
-## SPACE - Launch Ball
+#### Move Left - Left Arrow 
+#### Move Right -  Right Arrow
+#### Q - Start/Pause Game
+#### R - Restart Gme
+#### SPACE - Launch Ball
 
 ---
 
